@@ -1,0 +1,81 @@
+1<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المنشورات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff3e0;
+    }
+    header img {
+      height: 50px;
+      margin: 10px;
+    }
+    nav {
+      background-color: #0077b6;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .posts img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .posts img:hover {
+      transform: scale(1.05);
+    }
+    .fullscreen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .fullscreen img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  </style>
+</head>
+<body>
+  <header><img src="logo.png" alt="شعار"></header>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="photos.html">الصور</a>
+    <a href="videos.html">الفيديوهات</a>
+    <a href="posts.html">المنشورات</a>
+ 
+  </nav>
+  <div class="posts">
+    <img src="C:\Users\BALARB\OneDrive\الصور\سطح المكتب\مشاريع تقنية المعلومات 12\(Bahasa Arab).png" alt="بوست 1" onclick="openFullscreen(this.src)">
+    <img src="C:\Users\BALARB\OneDrive\الصور\سطح المكتب\مشاريع تقنية المعلومات 12\قصة Instagram ابيض واخضر عن اعادة التدوير .png" alt="بوست 2" onclick="openFullscreen(this.src)">
+  </div>
+  <div class="fullscreen" onclick="this.style.display='none'">
+    <img id="fullImg" src="">
+  </div>
+  <script>
+    function openFullscreen(src) {
+      document.getElementById('fullImg').src = src;
+      document.querySelector('.fullscreen').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
